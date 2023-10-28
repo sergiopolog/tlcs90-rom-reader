@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name nmk-gfx)(type Legacy)(uri C:/KICAD/projects/nmk-gfx/nmk-gfx.lib)(options "")(descr ""))
+)

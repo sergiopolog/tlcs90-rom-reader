@@ -1,0 +1,151 @@
+
+*******************************************************************************
+                             tlcs90-rom-reader-pld
+*******************************************************************************
+
+CUPL(WM)        5.0a Serial# 60008009
+Device          g22v10  Library DLIB-h-40-1
+Created         Fri Oct 27 18:38:19 2023
+Name            tlcs90-rom-reader-pld 
+Partno          
+Revision        
+Date            27/10/2023 
+Designer        Recreativos Piscis 
+Company         
+Assembly        Sets 0x9000 [00 09] as PC after NMI-RESET and, after that, simulates two instruction fetches from EPROM by the MCU:  ld (P01CR),07H [37 C2 07]  and  ld (P2CR),0FFH [37 C5 FF] 
+Location        Spain 
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+!o14 =>
+    !i8 & i9 & i10 & i11 & i13
+
+!o15 =>
+    i1
+
+o16 =>
+    !i2 & !i3 & !i4 & i5
+  # !i2 & i3 & !i4 & i5
+  # i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o17 =>
+    !i2 & i3 & !i4 & i5
+  # i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o18 =>
+    i2 & !i3 & !i4 & i5
+  # !i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o19 =>
+    !i2 & !i3 & !i4 & i5
+  # i2 & !i3 & !i4 & i5
+  # !i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o20 =>
+    !i2 & i3 & i4 & i5
+
+o21 =>
+    i2 & !i3 & !i4 & i5
+  # i2 & i3 & !i4 & i5
+  # !i2 & !i3 & i4 & i5
+  # i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o22 =>
+    i2 & !i3 & !i4 & i5
+  # !i2 & i3 & !i4 & i5
+  # i2 & i3 & !i4 & i5
+  # !i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o23 =>
+    i2 & !i3 & !i4 & i5
+  # i2 & i3 & !i4 & i5
+  # !i2 & !i3 & i4 & i5
+  # i2 & !i3 & i4 & i5
+  # !i2 & i3 & i4 & i5
+
+o14.oe  =>
+    1 
+
+o15.oe  =>
+    1 
+
+o16.oe  =>
+    1 
+
+o17.oe  =>
+    1 
+
+o18.oe  =>
+    1 
+
+o19.oe  =>
+    1 
+
+o20.oe  =>
+    1 
+
+o21.oe  =>
+    1 
+
+o22.oe  =>
+    1 
+
+o23.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    i1                          1        V        -       -       -     
+    i2                          2        V        -       -       -     
+    i3                          3        V        -       -       -     
+    i4                          4        V        -       -       -     
+    i5                          5        V        -       -       -     
+    i6                          6        V        -       -       -     
+    i7                          7        V        -       -       -     
+    i8                          8        V        -       -       -     
+    i9                          9        V        -       -       -     
+    i10                         10       V        -       -       -     
+    i11                         11       V        -       -       -     
+    i13                         13       V        -       -       -     
+    o14                         14       V        1       8       0     
+    o15                         15       V        1       10      0     
+    o16                         16       V        4       12      0     
+    o17                         17       V        3       14      0     
+    o18                         18       V        3       16      0     
+    o19                         19       V        4       16      0     
+    o20                         20       V        1       14      0     
+    o21                         21       V        5       12      0     
+    o22                         22       V        5       10      0     
+    o23                         23       V        5       8       0     
+    o14                 oe      14       D        1       1       0     
+    o15                 oe      15       D        1       1       0     
+    o16                 oe      16       D        1       1       0     
+    o17                 oe      17       D        1       1       0     
+    o18                 oe      18       D        1       1       0     
+    o19                 oe      19       D        1       1       0     
+    o20                 oe      20       D        1       1       0     
+    o21                 oe      21       D        1       1       0     
+    o22                 oe      22       D        1       1       0     
+    o23                 oe      23       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

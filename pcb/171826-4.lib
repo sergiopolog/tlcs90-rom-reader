@@ -1,0 +1,27 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# 171826-4
+#
+DEF 171826-4 J 0 40 Y Y 1 L N
+F0 "J" -201 351 50 H V L BNN
+F1 "171826-4" -201 -301 50 H V L BNN
+F2 "TE_171826-4" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "171826-4" 0 0 50 H I L BNN "Comment"
+F5 "Compliant" 0 0 50 H I L BNN "EU_RoHS_Compliance"
+F6 "Connector" 0 0 50 H I L BNN "Product_Type"
+F7 "2.5 mm[.098 in]" 0 0 50 H I L BNN "Centerline_Pitch"
+F8 "4" 0 0 50 H I L BNN "Number_of_Positions"
+DRAW
+S -200 -200 100 300 0 0 10 f
+X 1 1 -400 200 200 R 40 40 0 0 P 
+X 2 2 -400 100 200 R 40 40 0 0 P 
+X 3 3 -400 0 200 R 40 40 0 0 P 
+X 4 4 -400 -100 200 R 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library

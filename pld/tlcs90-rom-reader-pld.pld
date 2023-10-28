@@ -1,0 +1,81 @@
+Name		tlcs90-rom-reader-pld ;
+PartNo		;
+Date		27/10/2023 ;
+Revision	;
+Designer	Recreativos Piscis ;
+Company		;
+Assembly	Sets 0x9000 [00 09] as PC after NMI-RESET and, after that, simulates two instruction fetches from EPROM by the MCU:  ld (P01CR),07H [37 C2 07]  and  ld (P2CR),0FFH [37 C5 FF] ;
+Location	Spain ;
+Device		g22v10 ;
+
+/* ********** INPUT PINS ********** */ 
+PIN 1 = i1 ;		/* /DISABLE-COUNT */
+PIN 2 = i2 ;		/* C0 */
+PIN 3 = i3 ;		/* C1 */
+PIN 4 = i4 ;		/* C2 */
+PIN 5 = i5 ;		/* C3 */
+PIN 6 = i6 ;		/* NOT USED */
+PIN 7 = i7 ;		/* NOT USED */
+PIN 8 = i8 ;		/* /WR */
+PIN 9 = i9 ;		/* A16 */
+PIN 10 = i10 ;		/* A17 */
+PIN 11 = i11 ;		/* A18 */
+PIN 13 = i13 ;		/* A19 */
+
+/* ********** OUTPUT PINS ********* */ 
+PIN 23 = o23 ;		/* D0 */
+PIN 22 = o22 ;		/* D1 */
+PIN 21 = o21 ;		/* D2 */
+PIN 20 = o20 ;		/* D3 */
+PIN 19 = o19 ;		/* D4 */
+PIN 18 = o18 ;		/* D5 */
+PIN 17 = o17 ;		/* D6 */
+PIN 16 = o16 ;		/* D7 */
+PIN 15 = o15 ;		/* /DBUS-ENABLE */
+PIN 14 = o14 ;		/* /WR-LED */
+
+
+/* ******** LOGIC EQUATIONS ******* */ 
+
+o23 =  i5 & !i4 & !i3 &  i2
+	#  i5 & !i4 &  i3 &  i2
+	#  i5 &  i4 & !i3 & !i2
+	#  i5 &  i4 & !i3 &  i2
+	#  i5 &  i4 &  i3 & !i2 ;
+
+o22 =  i5 & !i4 & !i3 &  i2
+	#  i5 & !i4 &  i3 & !i2
+	#  i5 & !i4 &  i3 &  i2
+	#  i5 &  i4 & !i3 & !i2
+	#  i5 &  i4 &  i3 & !i2 ;
+
+o21 =  i5 & !i4 & !i3 &  i2
+	#  i5 & !i4 &  i3 &  i2
+	#  i5 &  i4 & !i3 & !i2
+	#  i5 &  i4 & !i3 &  i2
+	#  i5 &  i4 &  i3 & !i2 ;
+
+o20 =  i5 &  i4 &  i3 & !i2 ;
+
+o19 =  i5 & !i4 & !i3 & !i2
+	#  i5 & !i4 & !i3 &  i2
+	#  i5 &  i4 & !i3 & !i2
+	#  i5 &  i4 &  i3 & !i2 ;
+
+o18 =  i5 & !i4 & !i3 &  i2
+	#  i5 &  i4 & !i3 & !i2
+	#  i5 &  i4 &  i3 & !i2 ;
+
+o17 =  i5 & !i4 &  i3 & !i2
+	#  i5 &  i4 & !i3 &  i2
+	#  i5 &  i4 &  i3 & !i2 ;
+	
+o16 =  i5 & !i4 & !i3 & !i2
+	#  i5 & !i4 &  i3 & !i2
+	#  i5 &  i4 & !i3 &  i2
+	#  i5 &  i4 &  i3 & !i2 ;
+
+!o15 = i1;
+
+
+!o14 = !i8 & i9 & i10 & i11 & i13 ;
