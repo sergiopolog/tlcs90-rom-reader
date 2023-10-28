@@ -95,11 +95,8 @@ If the initial rom size was unknown and the model wasn't really a 32K device, so
 
 > **NOTE:** If the green led doesn't turn on long after those estimated times, then it should be a problem in the read process. Please check the [Special cases](#special-cases) section.
 
-Powering the board using Barrel Connector and an external 9V DC power supply:
-
-[<p align="center"><img alt="Barrel Connector Polatiry" width="100px" src="img/polarity-center-positive.jpg" /></p>](img/polarity-center-positive.jpg)
-<br/>
-[<p align="center"><img alt="Barrel Connector PCB" width="200px" src="img/Powered_by_Barrel_Connector.jpeg" /></p>](img/Powered_by_Barrel_Connector.jpeg)
+Powering the board using Barrel Connector and an external 9V DC power supply: [<img alt="Barrel Connector Polatiry" width="100px" src="img/polarity-center-positive.jpg" />](img/polarity-center-positive.jpg)
+[<p align="center"><img alt="Barrel Connector PCB" width="400px" src="img/Powered_by_Barrel_Connector.jpeg" /></p>](img/Powered_by_Barrel_Connector.jpeg)
 
 
 ## How it works
@@ -136,7 +133,7 @@ Considering that, this is basically how the dump method works:
 
 Below picture shows the main signals involved in the attack and how they evolves in the attack process:
 
-[<p align="center"><img alt="TLCS90 ROM Reader Attack Timing" width="800px" src="img/tlcs90-attack-timing.jpg" /></p>](img/tlcs90-attack-timing.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader Attack Timing" width="1000px" src="img/tlcs90-attack-timing.jpg" /></p>](img/tlcs90-attack-timing.jpg)
 
 
 ### Special cases
@@ -200,7 +197,7 @@ Using the data compiled from the first version, the second one includes the impl
 
 Multiple patches needed to be done directly in the pcb in ordert to fix errors and test slight variations of the attack :D
 
-[<p align="center"><img alt="TLCS90 ROM Reader v2 back" width="400px" src="img/TLCS90-rom-reader-v2-back.jpg" /></p>](img/TLCS90-rom-reader-v2-back.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader v2 back" width="400px" src="img/TLCS90-rom-reader-v2-back.jpeg" /></p>](img/TLCS90-rom-reader-v2-back.jpeg)
 
 
 ### Version 3 (Final version)
