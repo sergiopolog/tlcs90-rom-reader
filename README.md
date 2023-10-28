@@ -64,7 +64,7 @@ All components used on the PCB design are "Through-Hole". That makes the assembl
 1. Build the pcb using the gerbers located in the [pcb/gerbers](pcb/gerbers) folder.
 2. Burn the program code from the binary file located at [src](src) folder into a 27C512 EPROM.
 3. Burn the PLD from the jedec file located at [pld](pld) folder into a GAL22V10 device.
-4. Install all the components into the pcb. Sockets are recommended at least for MCU, EPROM, EEPROM and PLD devices. There is an interactive, html-based BOM file located at pcb/bom which is useful when populating the board.
+4. Install all the components into the pcb. Sockets are recommended at least for MCU, EPROM, EEPROM and PLD devices. There is an interactive, html-based BOM file located at [pcb/bom](pcb/bom) which is useful when populating the board.
 
 
 ## How to use
@@ -85,7 +85,7 @@ All components used on the PCB design are "Through-Hole". That makes the assembl
 5. Push the `/RESET` button shortly and green LED at `D2` will turn on, marking the PCB is ready.
 6. Toggle the `/EA` switch to the right position **(OFF)** (internal mode)
 7. Push again the `/RESET` button to start the read process. Green LED turns off.
-8. When green LED turns on again, the process ended successfully. Time spent in the read process depends on the MCU model and the size of its internal ROM. A 8K internal ROM takes about 55 seconds, 16K one about 110 seconds and 32K one about 220 seconds using a 4MHz XTAL on the PCB. It could be upgraded up to 10MHz (max freq. allowed by the MCU), in order to reduces those dump times, but that's not really needed.
+8. When green LED turns on again, the process ended successfully. Time spent in the read process depends on the MCU model and the size of its internal ROM. A 8K internal ROM takes about 55 seconds, 16K one about 110 seconds and 32K one about 220 seconds using a 4MHz XTAL on the PCB. It could be upgraded up to 10MHz (max freq. allowed by the MCU), in order to reduce those dump times, but that's not really needed.
 9. The contents of the internal ROM are written to the EEPROM located at `U3`. Carefully extract it from the socket and read contents with a proper EPROM reader.
 
 If the initial rom size was unknown and the model wasn't really a 32K device, some extra content was read by the process and was placed at the end of the dumped file. In that file could be some flag values at some specific addresses marking what is the real internal ROM size:
