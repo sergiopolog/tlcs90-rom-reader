@@ -2,7 +2,7 @@
 
 TLCS-90 ROM Reader is custom made tool intended to read the inner ROM content that TLCS-90 series Toshiba MCUs have internally, at least for the models which support it.
 
-[<img alt="TLCS90 ROM Reader" width="400px" src="img/mcu-nmk215.jpeg" />](img/mcu-nmk215.jpeg)
+[<p align="center"><img alt="TLCS90 ROM Reader" width="400px" src="img/mcu-nmk215.jpeg" /></p>](img/mcu-nmk215.jpeg)
 
 Devices in the TLCS-90 family from Toshiba are MCUs with a Z80 core and a quite similar instruction set, but they have additional features than the original CPU from Zilog, such us:
   - Internal Counters
@@ -97,8 +97,9 @@ If the initial rom size was unknown and the model wasn't really a 32K device, so
 
 Powering the board using Barrel Connector and an external 9V DC power supply:
 
-[<img alt="Barrel Connector Polatiry" width="400px" src="img/polarity-center-positive.jpg" />](img/polarity-center-positive.jpg)
-[<img alt="Barrel Connector PCB" width="400px" src="img/Powered_by_Barrel_Connector.jpeg" />](img/Powered_by_Barrel_Connector.jpeg)
+[<p align="center"><img alt="Barrel Connector Polatiry" width="100px" src="img/polarity-center-positive.jpg" /></p>](img/polarity-center-positive.jpg)
+<br/>
+[<p align="center"><img alt="Barrel Connector PCB" width="200px" src="img/Powered_by_Barrel_Connector.jpeg" /></p>](img/Powered_by_Barrel_Connector.jpeg)
 
 
 ## How it works
@@ -135,7 +136,7 @@ Considering that, this is basically how the dump method works:
 
 Below picture shows the main signals involved in the attack and how they evolves in the attack process:
 
-[<img alt="TLCS90 ROM Reader Attack Timing" width="400px" src="img/tlcs90-attack-timing.jpg" />](img/tlcs90-attack-timing.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader Attack Timing" width="800px" src="img/tlcs90-attack-timing.jpg" /></p>](img/tlcs90-attack-timing.jpg)
 
 
 ### Special cases
@@ -189,24 +190,24 @@ During the process some previous versions of the board was manufactured and test
 
 This board was the first ever made and the purpose of that was testing the behaviour of the TLCS90 devices and perform some simple attack attempts and see how the device behaves under them.
 
-[<img alt="TLCS90 ROM Reader v1" width="400px" src="img/TLCS90-rom-reader-v1.jpg" />](img/TLCS90-rom-reader-v1.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader v1" width="400px" src="img/TLCS90-rom-reader-v1.jpg" /></p>](img/TLCS90-rom-reader-v1.jpg)
 
 ### Version 2 (Proto - Attack board)
 
 Using the data compiled from the first version, the second one includes the implementation of the main attack with some small variants to be tested with real devices.
 
-[<img alt="TLCS90 ROM Reader v2 front" width="400px" src="img/TLCS90-rom-reader-v2-front.jpg" />](img/TLCS90-rom-reader-v2-front.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader v2 front" width="400px" src="img/TLCS90-rom-reader-v2-front.jpg" /></p>](img/TLCS90-rom-reader-v2-front.jpg)
 
 Multiple patches needed to be done directly in the pcb in ordert to fix errors and test slight variations of the attack :D
 
-[<img alt="TLCS90 ROM Reader v2 back" width="400px" src="img/TLCS90-rom-reader-2-back.jpg" />](img/TLCS90-rom-reader-2-back.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader v2 back" width="400px" src="img/TLCS90-rom-reader-v2-back.jpg" /></p>](img/TLCS90-rom-reader-v2-back.jpg)
 
 
 ### Version 3 (Final version)
 
 After confirming the attack is successfull for several devices, the unused parts were removed and the layout was simplified. Added support for selecting the type of device (by its internal ROM size). Also an additional option to power the board was added via barrel connector. 
 
-[<img alt="TLCS90 ROM Reader v3" width="400px" src="img/TLCS90-rom-reader-v3.jpg" />](img/TLCS90-rom-reader-v3.jpg)
+[<p align="center"><img alt="TLCS90 ROM Reader v3" width="400px" src="img/mcu-nmk215.jpeg" /></p>](img/mcu-nmk215.jpeg)
 
 
 
