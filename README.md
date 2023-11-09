@@ -158,20 +158,20 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 
 |  Device Ref.  |  Device Model  |  Package  |  Dev. Company  |  Found on Hw  |  Dumped?  |  Config. used to dump (DSW2)  | Picture |
 | --- | --- | ----------------- | ----------------- | ----------- | ----------- | ----------- | ----------- |
-|  NMK-004  |  TMP90840  |  QFP64  |  NMK  |  many NMK games (sound cpu)  |  **Yes**<br/>(using [trap15 method](http://daifukkat.su/blog/archives/2014/09/13/nmk004_rom_dumping_part_5_the_release/))<br/>(pending to be dumped using this method)  |  -  |  -  |
-|  NMK-110  |  TMP91640  |  SDIP64  |  NMK  |  ddealer & tdragon<br/>(different internal ROM on each one)  |  **Yes**  |  4  |  [Link](img/mcu-nmk110.jpeg)  |
-|  NMK-113  |  TMP91640  |  SDIP64  |  NMK  |  hachamf  |  **Yes**  |  4  |  [Link](img/mcu-nmk113.jpeg)   |
-|  NMK-215  |  TMP90840  |  SDIP64  |  NMK  |  sabotenb, bjtwin, macross, gunnail  |  **Yes**  |  4  |  [Link](img/mcu-nmk215.jpeg)   |
-|  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjvegas  |  **Yes**  |  2  |  [Link](img/mcu-mjvegas.jpeg)   |
+|  NMK-004  |  TMP90840  |  QFP64  |  NMK  |  many NMK games (sound cpu)  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk004.cpp#L83)<br/>(using [trap15 method](http://daifukkat.su/blog/archives/2014/09/13/nmk004_rom_dumping_part_5_the_release/))<br/>(pending to be dumped using this method)  |  -  |  -  |
+|  NMK-110  |  TMP91640  |  SDIP64  |  NMK  |  ddealer & tdragon<br/>(different internal ROM on each one)  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/ddealer.cpp#L463)  and  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk16.cpp#L6447)  |  4  |  [Link](img/mcu-nmk110.jpeg)  |
+|  NMK-113  |  TMP91640  |  SDIP64  |  NMK  |  hachamf  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk16.cpp#L6801)  |  4  |  [Link](img/mcu-nmk113.jpeg)   |
+|  NMK-215  |  TMP90840  |  SDIP64  |  NMK  |  sabotenb, bjtwin, macross, gunnail  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk16.cpp#L7480)  |  4  |  [Link](img/mcu-nmk215.jpeg)   |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjvegas  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/dynax/royalmah.cpp#L5121)  |  2  |  [Link](img/mcu-mjvegas.jpeg)   |
 |  -  |  ?  |  SDIP64  |  Dynax  |  cafedoll  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  cafebrk  |  No  |  -  |  -  |
-|  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  **Yes**  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/dynax/royalmah.cpp#L5034)  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  ougonhai  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  majrjhdx  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  avspirit  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  edf  |  No  |  -  |  -  |
 |  MO-91009  |  ?  |  SDIP64  |  Jaleco  |  64street  |  No  |  -  |  -  |
-|  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  **Yes**  |  6  |  [Link](img/mcu-mo91025.jpeg)  |
+|  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/jaleco/megasys1.cpp#L2888)  |  6  |  [Link](img/mcu-mo91025.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  chimerab |  No  |  -  |  -  |
 |  MO-91028  |  ?  |  SDIP64  |  Jaleco  |  cybattlr  |  No  |  -  |  -  |
 |  MO-92033  |  ?  |  SDIP64  |  Jaleco  |  peekaboo  |  No  |  -  |  -  |
