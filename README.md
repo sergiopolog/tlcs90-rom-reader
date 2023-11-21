@@ -21,13 +21,13 @@ Some the chips included in that pcb were very clearly faulty, with broken legs a
 After some investigation, I realized that component is in fact a Toshiba MCU, because the pinout matches with one of the models of those series as shown on their databook, at least the power pins (Vcc and Ground), reset, clock, address and data buses.
 Those types of MCU, as said above, could have internal ROM, where it stores a program to be executed by the MCU itself. And that's probably the case for that NMK board.
 
-Then, the first attempt to read if the internal ROM was in a phisical way. I sent the chip to [Furrtek](http://furrtek.free.fr) a while back to be decapped and, in a luckly chance, the ROM could be optically reed from the die, but there was no luck on that shot. The die reveals no visible ROM area, at least from the top view, ~~and a delayering (quite more complex method) should be performed to check if the ROM area will be visible underneath the top metal layer.~~ -> Thanks to [Travis Goodspeed](https://x.com/travisgoodspeed) for pointing out that TLCS-47 series has _Implant ROM_  (Toshibe most likely used the same technology for newer TLCS-90 series) meaning that the difference between P and N silicon describes the bit and, in fact, it's not optically visible  even after delayering, because they are the exact same color.
+Then, the first attempt to read if the internal ROM was in a phisical way. I sent the chip to [Furrtek](http://furrtek.free.fr) a while back to be decapped and, in a luckly chance, the ROM could be optically reed from the die, but there was no luck on that shot. The die reveals no visible ROM area, at least from the top view, ~~and a delayering (quite more complex method) should be performed to check if the ROM area will be visible underneath the top metal layer.~~ -> Thanks to [Travis Goodspeed](https://x.com/travisgoodspeed) for pointing out that TLCS-47 series has _Implant ROM_ (Toshiba most likely used the same technology for newer TLCS-90 series) meaning that the difference between P and N silicon describes the bit and, in fact, it's not optically visible  even after delayering, because they are the exact same color.
 
-So, after that try, the next efforts were be spent on trying to find a way to exploit the device and read the contents from outside using some external process,  like the way some other MCU devices were successfully dumped.
+So, after that try, the next efforts were spent on trying to find a way to exploit the device and read the contents from outside using some external process,  like the way some other MCU devices were successfully dumped.
 
-And that's how this project started. After 3 diferent revisions of the pcb and software made during the process in order to know how the MCU behaves in different scenarios and many of its features, it works now for a good number of devices tested by now.
+And that's how this project started. After 3 diferent revisions of the pcb and software made during the process in order to know how the MCU behaves in different scenarios and many of its features, it works for a good number of devices tested by now.
 
-The internal ROMs dumped from several devices helped in improve and even manage to complete emulation on some games in MAME.
+The internal ROMs dumped from several devices helped in improving and even managing to complete emulation on some games in MAME.
 
 ## TLCS-90 Series MCUs
 
@@ -46,7 +46,7 @@ The internal ROMs dumped from several devices helped in improve and even manage 
 
 **Bold** ones have the same pinout as NMK-215.
 Not supported ones have slighty different architecture, lacking of /NMI pin, making the Reader pcb not able to achieve the process.
-The 400N and 800N ones are (theoretically) supported but a pinout adapter is needed to use them with Reader PCB. However that is currently not tested yet, as I couldn't source any device of those model to check it out.
+The 400N and 800N ones are (theoretically) supported but a pinout adapter is needed to use them with Reader PCB. However, that is currently untested yet, as I couldn't source any device of those model to check it out.
 
 
 The tool consists in a combination of a custom-made pcb, a program code written to be executed on the targeted MCU itself, and a PLD and glue logic to make all things work together. The tool runs by itself without need to attach it to another hardware or so, it only needs to be populated with the proper components and powered it using +5V. 
@@ -69,7 +69,7 @@ All components used on the PCB design are "Through-Hole". That makes the assembl
 
 ## How to use
 
-> **IMPORTANT:** Ensure that device model is the one of the compatible models marked above before proceeding with the process. If the model is unknown, you can check if it is one of the directly supported models by checking the following things:
+> **IMPORTANT:** Ensure that device is one of the compatible models marked above before proceeding with the process. If the model is unknown, you can check if it is one of the directly supported models by checking the following things:
 > * Pins 1 and 64 should be tied to Vcc in the original pcb where it was installed.
 > * Pins 2 and 32 should be tied to GND in the original pcb where it was installed.
 > * Pin 55 should be tied to Vcc if it uses internal ROM.
@@ -103,7 +103,7 @@ Powering the board using Barrel Connector and an external 9V DC power supply: [<
 
 ### TLCS-90 features
 
-This dump method implemented in this tool sits over these features/behaviors the TCLS-90 MCUs have:
+The dump method implemented in this tool sits over these features/behaviors of the TCLS-90 MCUs:
 
 * The MCU provides an input pin called `/EA` ("External Access") and when it's asserted (low level), the MCU ignores the internal ROM (and RAM) space and addresess it to the outside using the address port pins. When it's not asserted it uses the internal ROM placed on the beginning of the memory map ($0000 - $2000, $0000 - $4000.. etc, depending of the specific MCU model). So we can externally control if the MCU starts in external or internal mode.
 * The `/EA` pin doesn't allow a hot-swap, when the MCU is running, and only sets the value when resetting the device.
@@ -131,7 +131,7 @@ Considering that, this is basically how the dump method works:
 
 ### Attack Timing
 
-Below picture shows the main signals involved in the attack and how they evolves in the attack process:
+Below picture shows the main signals involved in the attack and how they evolve during the attack process:
 
 [<p align="center"><img alt="TLCS90 ROM Reader Attack Timing" width="1000px" src="img/tlcs90-attack-timing.jpg" /></p>](img/tlcs90-attack-timing.jpg)
 
@@ -162,18 +162,20 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  NMK-110  |  TMP91640  |  SDIP64  |  NMK  |  ddealer & tdragon<br/>(different internal ROM on each one)  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/ddealer.cpp#L463)  and  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk16.cpp#L6447)  |  4  |  [Link](img/mcu-nmk110.jpeg)  |
 |  NMK-113  |  TMP91640  |  SDIP64  |  NMK  |  hachamf  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk16.cpp#L6801)  |  4  |  [Link](img/mcu-nmk113.jpeg)   |
 |  NMK-215  |  TMP90840  |  SDIP64  |  NMK  |  sabotenb, bjtwin, macross, gunnail  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/nmk/nmk16.cpp#L7480)  |  4  |  [Link](img/mcu-nmk215.jpeg)   |
-|  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjvegas  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/dynax/royalmah.cpp#L5121)  |  2  |  [Link](img/mcu-mjvegas.jpeg)   |
-|  -  |  ?  |  SDIP64  |  Dynax  |  cafedoll  |  No  |  -  |  -  |
-|  -  |  ?  |  SDIP64  |  Dynax  |  cafebrk  |  No  |  -  |  -  |
-|  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/dynax/royalmah.cpp#L5034)  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjvegas  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5159)  |  2  |  [Link](img/mcu-mjvegas.jpeg)   |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  cafedoll  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5042)  |  2  |  [Link](img/mcu-cafedoll.jpeg)  |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  cafetime  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L98)  |  2  |  [Link](img/mcu-cafetime.jpeg)  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafebrk  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5340)  |  2  |  [Link](img/mcu-cafebrk.jpeg)  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5072)  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  ougonhai  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  majrjhdx  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  avspirit  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  edf  |  No  |  -  |  -  |
-|  MO-91009  |  ?  |  SDIP64  |  Jaleco  |  64street  |  No  |  -  |  -  |
-|  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/0006fba49565386afa9b66d9fb8e02f744cf7cdb/src/mame/jaleco/megasys1.cpp#L2888)  |  6  |  [Link](img/mcu-mo91025.jpeg)  |
+|  MO-91009  |  TMP91640  |  SDIP64  |  Jaleco  |  64street  |  [**Yes**](https://github.com/mamedev/mame/blob/11b8f8af4c6ec0f062aefabf6fb54b13dbb603c5/src/mame/jaleco/megasys1.cpp#L2297)  |  6  |  [Link](img/mcu-mo91009.jpeg)  |
+|  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/11b8f8af4c6ec0f062aefabf6fb54b13dbb603c5/src/mame/jaleco/megasys1.cpp#L2888)  |  6  |  [Link](img/mcu-mo91025.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  chimerab |  No  |  -  |  -  |
 |  MO-91028  |  ?  |  SDIP64  |  Jaleco  |  cybattlr  |  No  |  -  |  -  |
+|  MO-91044  |  ?  |  SDIP64  |  Jaleco  |  hayaosi1  |  No  |  -  |  -  |
 |  MO-92033  |  ?  |  SDIP64  |  Jaleco  |  peekaboo  |  No  |  -  |  -  |
 
 If you find more devices based on this MCU series, have additional info or successfully dump some, please let me know to add them to the above tables, just as reference.
@@ -195,14 +197,14 @@ Using the data compiled from the first version, the second one includes the impl
 
 [<p align="center"><img alt="TLCS90 ROM Reader v2 front" width="400px" src="img/TLCS90-rom-reader-v2-front.jpg" /></p>](img/TLCS90-rom-reader-v2-front.jpg)
 
-Multiple patches needed to be done directly in the pcb in ordert to fix errors and test slight variations of the attack :D
+Multiple patches needed to be done directly in the pcb in order to fix errors and test slight variations of the attack :D
 
 [<p align="center"><img alt="TLCS90 ROM Reader v2 back" width="400px" src="img/TLCS90-rom-reader-v2-back.jpeg" /></p>](img/TLCS90-rom-reader-v2-back.jpeg)
 
 
 ### Version 3 (Final version)
 
-After confirming the attack is successfull for several devices, the unused parts were removed and the layout was simplified. Added support for selecting the type of device (by its internal ROM size). Also an additional option to power the board was added via barrel connector. 
+After confirming the attack is successfull for several devices, the unused parts were removed and the layout was simplified. Added support for selecting the type of device (by its internal ROM size). Also an additional option to power the board via barrel connector was added. 
 
 [<p align="center"><img alt="TLCS90 ROM Reader v3" width="400px" src="img/mcu-nmk215.jpeg" /></p>](img/mcu-nmk215.jpeg)
 
