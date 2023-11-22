@@ -46,10 +46,10 @@ The internal ROMs dumped from several devices helped in improving and even manag
 
 **Bold** ones have the same pinout as NMK-215.
 Not supported ones have slighty different architecture, lacking of /NMI pin, making the Reader pcb not able to achieve the process.
-The 400N and 800N ones are (theoretically) supported but a pinout adapter is needed to use them with Reader PCB. However, that is currently untested yet, as I couldn't source any device of those model to check it out.
+The 400N and 800N ones are (theoretically) supported but a pinout adapter is needed to use them with Reader PCB. However, that is currently untested yet, as I couldn't source any device of those models to check them out.
 
 
-The tool consists in a combination of a custom-made pcb, a program code written to be executed on the targeted MCU itself, and a PLD and glue logic to make all things work together. The tool runs by itself without need to attach it to another hardware or so, it only needs to be populated with the proper components and powered it using +5V. 
+The tool consists in a combination of a custom-made pcb, a program code written to be executed on the targeted MCU itself, a PLD and glue logic to make all things work together. The tool runs by itself without needing to attach it to another hardware or so, it only requires to be populated with the proper components and powered it using +5V. 
 
 ## DISCLAIMER
 Any use of this project is under **your own responsibility**. **You** will be responsible of checking the proper installation and functionality of your board and the compatiblity of the chips **You** will insert into it. By using this project **You** will agree that I cannot be held responsible if it will destroy any of your devices, burn down your house or whatever.
@@ -72,7 +72,7 @@ All components used on the PCB design are "Through-Hole". That makes the assembl
 > **IMPORTANT:** Ensure that device is one of the compatible models marked above before proceeding with the process. If the model is unknown, you can check if it is one of the directly supported models by checking the following things:
 > * Pins 1 and 64 should be tied to Vcc in the original pcb where it was installed.
 > * Pins 2 and 32 should be tied to GND in the original pcb where it was installed.
-> * Pin 55 should be tied to Vcc if it uses internal ROM.
+> * Pin 55 should be tied to Vcc (or to a pull-up resistor) if it uses internal ROM.
 > * Additionally, Pin 21 could be tied to Vcc aswell, indicating that no external interrupt is used. However this doesn't happen always.
 
 
@@ -95,7 +95,7 @@ If the initial rom size was unknown and the model wasn't really a 32K device, so
 
 > **NOTE:** If the green led doesn't turn on long after those estimated times, then it should be a problem in the read process. Please check the [Special cases](#special-cases) section.
 
-Powering the board using Barrel Connector and an external 9V DC power supply: [<img alt="Barrel Connector Polatiry" width="100px" src="img/polarity-center-positive.jpg" />](img/polarity-center-positive.jpg)
+Powering the board using Barrel Connector and an external 9V DC power supply (**Tip Positive!**):  [<img alt="Barrel Connector Polatiry" width="100px" src="img/polarity-center-positive.jpg" />](img/polarity-center-positive.jpg)
 [<p align="center"><img alt="Barrel Connector PCB" width="400px" src="img/Powered_by_Barrel_Connector.jpeg" /></p>](img/Powered_by_Barrel_Connector.jpeg)
 
 
@@ -178,7 +178,7 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  MO-91044  |  ?  |  SDIP64  |  Jaleco  |  hayaosi1  |  No  |  -  |  -  |
 |  MO-92033  |  ?  |  SDIP64  |  Jaleco  |  peekaboo  |  No  |  -  |  -  |
 
-If you find more devices based on this MCU series, have additional info or successfully dump some, please let me know to add them to the above tables, just as reference.
+If you find more devices based on this MCU series, have additional info or successfully dump some, please let me know to add them to the above table, just as reference.
 
 
 ## Prototypes and previous versions
