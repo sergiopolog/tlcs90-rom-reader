@@ -167,7 +167,8 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  -  |  TMP90840  |  SDIP64  |  Dynax  |  cafetime  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L98)  |  2  |  [Link](img/mcu-cafetime.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafebrk  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5340)  |  2  |  [Link](img/mcu-cafebrk.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5072)  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
-|  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjhdx  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4955)  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjh  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4970)  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjhdx  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4955)<br/>(same dump as majrjh)  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  gekisha  |  No  |  -  |  -  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  tenkai  |  [**Yes**](https://github.com/mamedev/mame/blob/88a47305a4a5987fbe0e9160d8dd6b6a9c3a2314/src/mame/dynax/dynax.cpp#L6820)<br/>(already dumped previosly)<br/>(pending to be dumped using this method)  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  tenkai2b  |  No  |  -  |  -  |
