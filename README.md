@@ -75,6 +75,7 @@ All components used on the PCB design are "Through-Hole". That makes the assembl
 > * Pin 55 should be tied to Vcc (or to a pull-up resistor) if it uses internal ROM.
 > * Additionally, Pin 21 could be tied to Vcc aswell, indicating that no external interrupt is used. However this doesn't happen always.
 
+First of all, ensure the 28C256 EEPROM is unprotected. This type of device can be protected making that any write performed on the device will be rejected. So, you need to ensure always to "Off Protect" the device before installing it on the board. Don't do any other actions on the EEPROM other than de-protecting it before inserting it in the socket of the reader PCB. (Thanks **kuze** for discovering and testing this)
 
 1. Set the `DSW2` with an initial value of **4** (0100).
 2. Select the internal ROM size of the target device using `DSW1`. If device model is unknown, then select 32K option to perform a full read. Perhaps, some space should be discarded after reading process.
@@ -168,18 +169,19 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafebrk  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5340)  |  2  |  [Link](img/mcu-cafebrk.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5072)  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjh  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4970)  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
-|  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjhdx  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4955)<br/>(same dump as majrjh)  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjhdx  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4955)<br/>*(same dump as majrjh)*  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  gekisha  |  No  |  -  |  -  |
-|  -  |  TMP91640  |  SDIP64  |  Dynax  |  tenkai  |  [**Yes**](https://github.com/mamedev/mame/blob/88a47305a4a5987fbe0e9160d8dd6b6a9c3a2314/src/mame/dynax/dynax.cpp#L6820)<br/>(already dumped previosly)<br/>(pending to be dumped using this method)  |  -  |  -  |
+|  -  |  TMP91640  |  SDIP64  |  Dynax  |  tenkai  |  [**Yes**](https://github.com/mamedev/mame/blob/88a47305a4a5987fbe0e9160d8dd6b6a9c3a2314/src/mame/dynax/dynax.cpp#L6820)<br/>*(already dumped previosly)*<br/>*(pending to be dumped using this method)*  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  tenkai2b  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  ougonhai  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  mjreach  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  avspirit  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  edf  |  No  |  -  |  -  |
-|  MO-91009  |  TMP91640  |  SDIP64  |  Jaleco  |  64street  |  [**Yes**](https://github.com/mamedev/mame/blob/11b8f8af4c6ec0f062aefabf6fb54b13dbb603c5/src/mame/jaleco/megasys1.cpp#L2297)  |  6  |  [Link](img/mcu-mo91009.jpeg)  |
-|  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/11b8f8af4c6ec0f062aefabf6fb54b13dbb603c5/src/mame/jaleco/megasys1.cpp#L2888)  |  6  |  [Link](img/mcu-mo91025.jpeg)  |
-|  -  |  ?  |  SDIP64  |  Jaleco  |  chimerab |  No  |  -  |  -  |
-|  MO-91028  |  ?  |  SDIP64  |  Jaleco  |  cybattlr  |  No  |  -  |  -  |
+|  MO-91009  |  TMP91640  |  SDIP64  |  Jaleco  |  64street  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2297)  |  6  |  [Link](img/mcu-mo91009.jpeg)  |
+|  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2879)  |  6  |  [Link](img/mcu-mo91021.jpeg)  |
+|  MO-91028  |  TMP91640  |  SDIP64  |  Jaleco  |  chimerab |   [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2927)<br/>*(same dump as cybattlr)*<br/>Thanks to **kuze**  |  6  |  [Link](img/mcu-mo91028.jpeg)  |
+|  -  |  ?  |  SDIP64  |  Jaleco  |  chimeraba |  No  |  -  |  -  |
+|  MO-91028  |  TMP91640  |  SDIP64  |  Jaleco  |  cybattlr  |   [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L3049)<br/>Thanks to **kuze**  |  6  |  [Link](img/mcu-mo91028.jpeg)  |
 |  MO-91044  |  ?  |  SDIP64  |  Jaleco  |  hayaosi1  |  No  |  -  |  -  |
 |  MO-92033  |  ?  |  SDIP64  |  Jaleco  |  peekaboo  |  No  |  -  |  -  |
 
