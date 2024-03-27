@@ -168,13 +168,14 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  -  |  TMP90840  |  SDIP64  |  Dynax  |  cafetime  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L98)  |  2  |  [Link](img/mcu-cafetime.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafebrk  |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5340)  |  2  |  [Link](img/mcu-cafebrk.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  cafepara |  [**Yes**](https://github.com/mamedev/mame/blob/26072bb747281a3abb519dc2a2c38884b9c5d479/src/mame/dynax/royalmah.cpp#L5072)  |  2  |  [Link](img/mcu-cafepara.jpeg)  |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjtensin  |  [**Yes**](https://github.com/mamedev/mame/blob/fe923e9b3c464d7e373dd1992c6001b47b572e19/src/mame/dynax/royalmah.cpp#L4868)<br/>*(not used by the game code)*  |  4  |  [Link](img/mcu-mjtensin.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjh  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4970)  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  majrjhdx  |  [**Yes**](https://github.com/mamedev/mame/blob/000c31fae55296ae3a853f2ffbe44a6d46dc7a3a/src/mame/dynax/royalmah.cpp#L4955)<br/>*(same dump as majrjh)*  |  2  |  [Link](img/mcu-majrjhdx.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  gekisha  |  No  |  -  |  -  |
 |  -  |  TMP91640  |  SDIP64  |  Dynax  |  tenkai  |  [**Yes**](https://github.com/mamedev/mame/blob/88a47305a4a5987fbe0e9160d8dd6b6a9c3a2314/src/mame/dynax/dynax.cpp#L6820)<br/>*(already dumped previosly)*<br/>*(pending to be dumped using this method)*  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Dynax  |  tenkai2b  |  No  |  -  |  -  |
-|  -  |  ?  |  SDIP64  |  Dynax  |  ougonhai  |  No  |  -  |  -  |
-|  -  |  ?  |  SDIP64  |  Dynax  |  mjreach  |  No  |  -  |  -  |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  ougonhai  |  [**Yes**](https://github.com/mamedev/mame/blob/fe923e9b3c464d7e373dd1992c6001b47b572e19/src/mame/dynax/dynax.cpp#L7021)  |  2  |  [Link](img/mcu-ougonhai.jpeg)   |
+|  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjreach  |  [**Yes**](https://github.com/mamedev/mame/blob/fe923e9b3c464d7e373dd1992c6001b47b572e19/src/mame/dynax/dynax.cpp#L6662)  |  2  |  [Link](img/mcu-mjreach.jpeg)   |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  avspirit  |  No  |  -  |  -  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  edf  |  No  |  -  |  -  |
 |  MO-91009  |  TMP91640  |  SDIP64  |  Jaleco  |  64street  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2297)  |  6  |  [Link](img/mcu-mo91009.jpeg)  |
