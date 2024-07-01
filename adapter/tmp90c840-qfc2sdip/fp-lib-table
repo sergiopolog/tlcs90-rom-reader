@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name nmk)(type KiCad)(uri C:/KICAD/projects/nmk214-bypass-bg/nmk.pretty)(options "")(descr ""))
+)
