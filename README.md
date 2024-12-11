@@ -178,7 +178,7 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjreach  |  [**Yes**](https://github.com/mamedev/mame/blob/fe923e9b3c464d7e373dd1992c6001b47b572e19/src/mame/dynax/dynax.cpp#L6662)  |  2  |  [Link](img/mcu-mjreach.jpeg)   |
 |  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjreach2  |  [**Yes**](https://github.com/mamedev/mame/blob/3f9d6b905f18b8800a9420abdd981ee51502d85e/src/mame/dynax/dynax.cpp#L6751)  |  2  |  [Link](img/mcu-mjreach2.jpeg)   |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  avspirit  |  No  |  -  |  -  |
-|  -  |  ?  |  SDIP64  |  Jaleco  |  edf  |  No  |  -  |  -  |
+|  -  |  TMP91640  |  SDIP64  |  Jaleco  |  edf  |  [**Yes**](https://github.com/mamedev/mame/blob/df3e2de8e1815f0c22419c298471fbb8776858a2/src/mame/jaleco/megasys1.cpp#L3145)<br/>Thanks to **Darren Olafson**  |  6  |  *no image*  |
 |  MO-91009  |  TMP91640  |  SDIP64  |  Jaleco  |  64street  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2297)  |  6  |  [Link](img/mcu-mo91009.jpeg)  |
 |  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2879)  |  6  |  [Link](img/mcu-mo91021.jpeg)  |
 |  MO-91028  |  TMP91640  |  SDIP64  |  Jaleco  |  chimerab |   [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2927)<br/>*(same dump as cybattlr)*<br/>Thanks to **kuze**  |  6  |  [Link](img/mcu-mo91028.jpeg)  |
