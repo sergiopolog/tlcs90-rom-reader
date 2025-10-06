@@ -178,14 +178,15 @@ Below there is a table with the current known devices based on TLCS-90 series MC
 |  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjreach  |  [**Yes**](https://github.com/mamedev/mame/blob/fe923e9b3c464d7e373dd1992c6001b47b572e19/src/mame/dynax/dynax.cpp#L6662)  |  2  |  [Link](img/mcu-mjreach.jpeg)   |
 |  -  |  TMP90840  |  SDIP64  |  Dynax  |  mjreach2  |  [**Yes**](https://github.com/mamedev/mame/blob/3f9d6b905f18b8800a9420abdd981ee51502d85e/src/mame/dynax/dynax.cpp#L6751)  |  2  |  [Link](img/mcu-mjreach2.jpeg)   |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  avspirit  |  No  |  -  |  -  |
-|  -  |  TMP91640  |  SDIP64  |  Jaleco  |  edf  |  [**Yes**](https://github.com/mamedev/mame/blob/df3e2de8e1815f0c22419c298471fbb8776858a2/src/mame/jaleco/megasys1.cpp#L3145)<br/>Thanks to **Darren Olafson**  |  6  |  *no image*  |
+|  -  |  TMP91640  |  SDIP64  |  Jaleco  |  edf  |  [**Yes**](https://github.com/mamedev/mame/blob/df3e2de8e1815f0c22419c298471fbb8776858a2/src/mame/jaleco/megasys1.cpp#L3145)<br/>Thanks to **Darren Olafson**<br/>Double checked by *me*.  |  6  |  [Link](img/mcu-edf.jpeg)  |
 |  MO-91009  |  TMP91640  |  SDIP64  |  Jaleco  |  64street  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2297)  |  6  |  [Link](img/mcu-mo91009.jpeg)  |
 |  MO-91021  |  TMP91640  |  SDIP64  |  Jaleco  |  bigstrik  |  [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2879)  |  6  |  [Link](img/mcu-mo91021.jpeg)  |
 |  MO-91028  |  TMP91640  |  SDIP64  |  Jaleco  |  chimerab |   [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L2927)<br/>*(same dump as cybattlr)*<br/>Thanks to **kuze**  |  6  |  [Link](img/mcu-mo91028.jpeg)  |
 |  -  |  ?  |  SDIP64  |  Jaleco  |  chimeraba |  No  |  -  |  -  |
 |  MO-91028  |  TMP91640  |  SDIP64  |  Jaleco  |  cybattlr  |   [**Yes**](https://github.com/mamedev/mame/blob/7b047641fe763667882a8c3320ad24163c63d327/src/mame/jaleco/megasys1.cpp#L3049)<br/>Thanks to **kuze**  |  6  |  [Link](img/mcu-mo91028.jpeg)  |
 |  MO-91044  |  ?  |  SDIP64  |  Jaleco  |  hayaosi1  |  No  |  -  |  -  |
-|  MO-92033  |  ?  |  SDIP64  |  Jaleco  |  peekaboo  |  No  |  -  |  -  |
+|  MO-92033  |  TMP91640  |  SDIP64  |  Jaleco  |  peekaboo  |  [**Yes**](https://github.com/mamedev/mame/blob/225c0586cb9f0f3c8fb234736ba2863dffa12c69/src/mame/jaleco/megasys1.cpp#L4424)  |  4  |  [Link](img/mcu-mo92033.jpeg)  |
+|  -  |  TMP90840  |  QFP64  |  Toshiba  |  T1600 Laptop PSU  |  [**Yes**](bin/mcu-t1600psu.bin)<br/>Using adapter located at [adapter/tmp90c840-qfc2sdip](adapter/tmp90c840-qfc2sdip)  |  4  |  [Link](img/mcu-t1600psu.jpeg)  |
 
 If you find more devices based on this MCU series, have additional info or successfully dump some, please let me know to add them to the above table, just as reference. 
 
