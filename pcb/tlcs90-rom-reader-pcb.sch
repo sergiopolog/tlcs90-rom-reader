@@ -2067,7 +2067,6 @@ F 3 "~" H 15300 7150 50  0001 C CNN
 	1    15300 7150
 	-1   0    0    1   
 $EndComp
-NoConn ~ 3900 3850
 Wire Wire Line
 	3150 7150 3200 7150
 Text GLabel 2550 7150 0    39   Input ~ 0
@@ -2239,7 +2238,6 @@ Wire Wire Line
 Wire Wire Line
 	10500 7600 10300 7600
 Connection ~ 10300 7600
-NoConn ~ 3900 3750
 Wire Wire Line
 	3200 8700 3200 9050
 Connection ~ 3200 9050
@@ -2627,4 +2625,8 @@ Wire Wire Line
 Connection ~ 13100 6900
 Text Notes 14800 5050 0    50   ~ 0
 EQUATIONS\n-------\n\no23 =\no22 = \no21 = \no20 = \no19 = \no18 = <new PC value>\no17 = <see PLD notes>\no16 = \n\n/o15 = i1\n\n/o14 = /i8 & i9 & i10 & i11 & i13
+Text GLabel 3900 3850 2    39   Input ~ 0
+~RD
+Text GLabel 3900 3750 2    39   Input ~ 0
+~WR
 $EndSCHEMATC
